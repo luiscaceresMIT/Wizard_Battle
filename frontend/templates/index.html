@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witcher Battle Game</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+<h1>Welcome to the Witcher Battle Game</h1>
+<p>Select your warrior:</p>
+<form action="/choose_warrior" method="post">
+    {% for warrior in warriors %}
+    <button type="submit" name="warrior" value="{{ warrior }}">
+        <img src="/static/img/{{ warrior }}.jpeg" alt="{{ warrior }}" width="100">
+        <br>
+        {{ warrior }}
+    </button>
+    {% endfor %}
+</form>
+<script src="/static/js/logic.js"></script>
+</body>
+</html>
